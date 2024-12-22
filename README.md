@@ -33,7 +33,7 @@ I used the following components in my mini honeynet within the Azure environment
 
 For the "BEFORE" metrics, all resources were originally deployed and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open to attack, and all other resources were deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic except my admin workstation, and all other resources were protected by their built-in firewalls and Private Endpoint.
+For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic except my admin workstation, and all other resources were protected by their built-in firewalls and Private Endpoint. I used NIST 800-53 rev. 5, SC-7 specifically, to implement controls that hardened the NSGs.
 
 ## Attack Maps Before Hardening / Security Controls
 ![Before_NSG Malicious Allowed - 24hr - Gabriel Gonzalez](https://github.com/user-attachments/assets/bfd6e03e-5018-4254-9b61-45a92878ffe5)<br>
