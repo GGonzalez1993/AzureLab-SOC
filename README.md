@@ -1,6 +1,7 @@
 # AzureLab-SOC
 # Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
+![Lab Overview - Gabriel Gonzalez](https://github.com/user-attachments/assets/4675afdd-ad8c-4012-8af4-0031f12edcce)
+
 
 ## Introduction
 
@@ -13,10 +14,12 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
 ## Architecture Before Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
+![Architecture Before Hardening _ Security Controls - Gabriel Gonzalez](https://github.com/user-attachments/assets/352cd2a0-b795-4587-97c7-c5af8e8e12d3)
+
 
 ## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
+![Architecture After Hardening _ Security Controls - Gabriel Gonzalez](https://github.com/user-attachments/assets/a4ef06dc-a2d9-406d-8299-4a7b871ad4d2)
+
 
 The architecture of the mini honeynet in Azure consists of the following components:
 
@@ -33,23 +36,25 @@ For the "BEFORE" metrics, all resources were originally deployed, exposed to the
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Attack Maps Before Hardening / Security Controls
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/1qvswSX.png)<br>
-![Linux Syslog Auth Failures](https://i.imgur.com/G1YgZt6.png)<br>
-![Windows RDP/SMB Auth Failures](https://i.imgur.com/ESr9Dlv.png)<br>
+![Before_NSG Malicious Allowed - 24hr - Gabriel Gonzalez](https://github.com/user-attachments/assets/bfd6e03e-5018-4254-9b61-45a92878ffe5)<br>
+![Before_Linux SSH Auth Fail - 24hr - Gabriel Gonzalez](https://github.com/user-attachments/assets/facc7cf6-ef6b-4f7c-b1b2-150343da5326)<br>
+![Before_Windows RDP Auth Fail - 24hrs - Gabriel Gonzalez](https://github.com/user-attachments/assets/91440d8a-5ef3-4e63-9418-a81dc86f8e8d)<br>
+![Before_MySQLAuthFails-24hrs-Gabriel Gonzalez](https://github.com/user-attachments/assets/b86d2961-7b74-4901-9710-532d22a7bc59)<br>
+
 
 ## Metrics Before Hardening / Security Controls
 
 The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-03-15 17:04:29
-Stop Time 2023-03-16 17:04:29
+Start Time 2024-12-15 16:41
+Stop Time 2024-12-16 16:41
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 19470
-| Syslog                   | 3028
-| SecurityAlert            | 10
-| SecurityIncident         | 348
-| AzureNetworkAnalytics_CL | 843
+| SecurityEvent            | 28873
+| Syslog                   | 47314
+| SecurityAlert            | 0
+| SecurityIncident         | 283
+| AzureNetworkAnalytics_CL | 3549
 
 ## Attack Maps Before Hardening / Security Controls
 
@@ -58,13 +63,13 @@ Stop Time 2023-03-16 17:04:29
 ## Metrics After Hardening / Security Controls
 
 The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-03-18 15:37
-Stop Time	2023-03-19 15:37
+Start Time 2024-12-20 10:49
+Stop Time	2024-12-20 10:49
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 8778
-| Syslog                   | 25
+| SecurityEvent            | 612
+| Syslog                   | 8
 | SecurityAlert            | 0
 | SecurityIncident         | 0
 | AzureNetworkAnalytics_CL | 0
